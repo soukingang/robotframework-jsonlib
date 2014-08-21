@@ -14,11 +14,11 @@ class JsonKeywords(object):
 
     def _decode_file(self, file):
         if os.path.isfile(file):
-            return demjson.decode_file(filename)
+            return demjson.decode_file(file)
         
     def _encode_to_file(self, json, file, ow=True):
         if os.path.isfile(file):
-            return demjson._encode_to_file(json,file,overwrite=ow)
+            return demjson._encode_to_file(file, json, overwrite=ow)
 
     def _insert_row(self, key, value, file):
         mjson = self._decode_file(file)
